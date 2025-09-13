@@ -5,6 +5,14 @@ from torch import Tensor
 from typing import Optional
 from typing import List, Tuple
 
+__all__ = [
+    "swish",
+    "hard_sigmoid",
+    "RMSNorm",
+    "RMSLSTMCell",
+    "RMSNormLSTM",
+]
+
 def hard_sigmoid(x):
     return torch.clamp(0.2 * x + 0.5, 0, 1)
 
@@ -178,6 +186,7 @@ if __name__ == "__main__":
     num_layers = 5
     bidirectional = True
 
+    # Gaussion distribution $\text{out}_{i} \sim \mathcal{N}(0, 1)$
     x = torch.randn(batch_size, seq_len, input_size)
 
     model_rms = RMSNormLSTM(
