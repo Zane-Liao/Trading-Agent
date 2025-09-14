@@ -9,7 +9,7 @@ from infrastructure.distributions import *
 from infrastructure import pytorch_utils as ptu
 
 
-class PocliyLSTM(nn.Module):
+class PolicyLSTM(nn.Module):
     """
     LSTM-Policy
     
